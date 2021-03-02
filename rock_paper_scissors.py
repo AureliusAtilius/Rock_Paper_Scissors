@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import random
 
 hands= ["rock","paper","scissors"]
@@ -19,7 +21,7 @@ while game == True:
 
     if hand.lower() == "rock" and computer_hand == "rock":
         print("Draw")
-        continue
+        pass
     elif hand.lower() == "rock" and computer_hand == "paper":
        print("Paper beats Rock!")
        losses+=1
@@ -55,7 +57,7 @@ while game == True:
     answer= " "
 
     #ask again if answer is invalid
-    while answer not in responses:
+    while answer.lower() not in responses:
         answer= input("Would you like to play again?")
 
     if answer in responses[3:5]:
@@ -68,8 +70,6 @@ while game == True:
             print("Computer Wins!")
         game = False
     continue
-
-
 
 
 

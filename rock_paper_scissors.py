@@ -12,7 +12,7 @@ while game == True:
     hand = input("Rock, Paper, Scissors, Shoot!\n")
     #ask again if choice is invalid
     if hand.lower() not in hands:
-        pass
+        continue
 
     #computer gets a random choice
     computer_hand = hands[random.randint(0,2)]
@@ -53,14 +53,14 @@ while game == True:
 
     #ask if you want to play again
     play_again=True
-    responses=["Yes","y","Y","No","n","N"]
+    responses=["Yes","yes","y","Y","No","no","n","N"]
     answer= " "
 
     #ask again if answer is invalid
-    while answer.lower() not in responses:
+    while answer not in responses:
         answer= input("Would you like to play again?")
 
-    if answer in responses[3:5]:
+    if answer in responses[4:7]:
         print("Player: {}, Computer: {}".format(wins,losses))
         if wins>losses:
                 print("Player Wins!")
@@ -70,7 +70,6 @@ while game == True:
             print("Computer Wins!")
         game = False
     continue
-
 
 
 
